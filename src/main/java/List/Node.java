@@ -31,4 +31,22 @@ public class Node<E> {
     public Node(E element) {
         this.element = element;
     }
+
+    @Override
+    public String toString() {
+        return element.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof Node)) {
+            return false;
+        }
+
+        return element.equals(((Node) obj).element);
+    }
 }

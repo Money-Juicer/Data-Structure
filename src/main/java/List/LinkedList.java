@@ -99,7 +99,8 @@ public class LinkedList<E> implements List<E> {
     public Node<E> find(E element) {
         int index = 0;
         Node<E> temp = head;
-        if(temp.getElement() == element)
+
+        if(temp.getElement().equals(element))
         {
             System.out.println("Node located at index "+index+".");
             return temp;
@@ -107,7 +108,7 @@ public class LinkedList<E> implements List<E> {
         while(temp.getNext() != null)
         {
             index++;
-            if(temp.getNext().getElement() == element)
+            if(temp.getNext().getElement().equals(element))
             {
                 System.out.println("Node located at index "+index+".");
                 return temp.getNext();
@@ -128,13 +129,16 @@ public class LinkedList<E> implements List<E> {
     @Override //인덱스가 아닌 노드 지정 삭제
     public void delete(Node<E> node) {
         Node<E> temp = head;
-        if(temp == node)
+        if(temp.equals(node))
         {
             head = temp.getNext();
+            // TODO: pointer 정리
+            length--;
+            return;
         }
         while(temp != null)
         {
-            if(temp == node)
+            if(temp.equals(node))
             {
                 temp.getPrev().setNext(temp.getNext());
                 temp.getNext().setPrev(temp.getPrev());
@@ -159,5 +163,18 @@ public class LinkedList<E> implements List<E> {
             temp = temp.getNext();
         }
         return temp.getElement();
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        Node temp = head;
+
+        while (temp != null) {
+            result += temp.getElement().toString() + '\n';
+            temp = temp.getNext();
+        }
+
+        return result;
     }
 }
