@@ -1,15 +1,22 @@
 package student;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class Student {
     private String name;
     private Long id;
     private Sex sex;
 
+    public Student(String name, long id, Sex sex) {
+        this.name = name;
+        this.id = id;
+        this.sex = sex;
+    }
+
     public Student(Long id) {
         this.id = id;
+    }
+
+    public void print() {
+        System.out.println("Name = "+name +", id = "+id+", Sex = "+sex);
     }
 
     @Override
