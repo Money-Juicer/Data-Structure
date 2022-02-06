@@ -1,11 +1,15 @@
 import List.LinkedList;
+import List.List;
 import List.Node;
 import student.Sex;
 import student.Student;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World4!");
+        List<Student> list = new LinkedList<Student>();
+        Menu menu = new Menu(list);
+        menu.run();
+
         LinkedList<student.Student> nLL = new LinkedList();
 
         student.Student a = new Student("지훈", 19, Sex.MALE);

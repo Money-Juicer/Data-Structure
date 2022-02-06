@@ -6,38 +6,29 @@ public class Node<E> {
     private Node<E> prev; //Reference to the previous node
 
     //########################################################
-    public E getElement()
-    {
+    public E getElement() {
         return element;
     }
-    public void setElement(E element)
-    {
+    public void setElement(E element) {
         this.element = element;
     }
     //########################################################
-    public Node<E> getNext()
-    {
+    public Node<E> getNext() {
         return next;
     }
-    public void setNext(Node<E> next)
-    {
+    public void setNext(Node<E> next) {
         this.next = next;
     }
     //########################################################
-    public Node<E> getPrev()
-    {
+    public Node<E> getPrev() {
         return prev;
     }
-    public void setPrev(Node<E> prev)
-    {
+    public void setPrev(Node<E> prev) {
         this.prev = prev;
     }
     //########################################################
 
-    public Node(E element)
-    {
+    public Node(E element) {
         this.element = element;
-        this.next = null;
-        this.prev = null;
     }
 }

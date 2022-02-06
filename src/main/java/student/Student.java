@@ -2,7 +2,7 @@ package student;
 
 public class Student {
     private String name;
-    private long id;
+    private Long id;
     private Sex sex;
 
     public Student(String name, long id, Sex sex) {
@@ -11,7 +11,29 @@ public class Student {
         this.sex = sex;
     }
 
+    public Student(Long id) {
+        this.id = id;
+    }
+
     public void print() {
         System.out.println("Name = "+name +", id = "+id+", Sex = "+sex);
+    }
+
+    @Override
+    public String toString() {
+        return "[" + id + "]" + " " + name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof Student)) {
+            return false;
+        }
+
+        return id.equals(((Student) obj).id);
     }
 }
