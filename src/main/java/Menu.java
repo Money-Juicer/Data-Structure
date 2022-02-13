@@ -65,7 +65,7 @@ public class Menu {
     private void find() {
         System.out.print("Student ID: ");
         Long id = scanner.nextLong();
-        Node<Student> node = list.find(new Student(id));
+        Student node = list.find(new Student(id));
         if (node == null) {
             System.out.println("No match...\n");
             return;
@@ -89,7 +89,7 @@ public class Menu {
             case 2:
                 System.out.print("Student ID: ");
                 Long id = scanner.nextLong();
-                list.delete(new Node<>(new Student(id)));
+                list.delete(new Student(id));
                 break;
             default:
                 System.out.println("Wrong Input. Try Again.");
@@ -107,12 +107,12 @@ public class Menu {
 
         switch (input) {
             case 1:
-                list.insert(new Node<>(student));
+                list.insert(student);
                 break;
             case 2:
                 System.out.print("Index: ");
                 int index = scanner.nextInt();
-                list.insert(index, new Node<>(student));
+                list.insert(index, student);
                 break;
             default:
                 System.out.println("Wrong Input. Try Again.");
@@ -127,7 +127,7 @@ public class Menu {
         String name = scanner.next();
 
         System.out.print("Student ID: ");
-        Long id = scanner.nextLong();
+        long id = scanner.nextLong();
 
         System.out.print("Sex(1. Male, 2. Female): ");
         int x = scanner.nextInt();
