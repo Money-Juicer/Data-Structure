@@ -2,15 +2,15 @@ package List;
 
 public interface List<E> {
 
-    void insert(Node<E> node);
+    void insert(E element);
 
-    void insert(int index, Node<E> node);
+    void insert(int index, E element);
 
     void delete(int index);
 
-    void delete(Node<E> node);
+    void delete(E element);
 
-    Node<E> find(E element);
+    E find(E element);
 
     void print();
 }
